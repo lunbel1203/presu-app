@@ -170,7 +170,7 @@ function PersonalPage({personalData}) {
             </div>
 
             <div className={`w-screen h-screen bg-black/50 fixed top-0 left-0 flex justify-center items-center z-50 ${openModalCreate ? '' : 'hidden' }`}>
-                <div className="w-9/12 bg-white p-5 rounded-lg">
+                <div className="w-9/12 bg-white px-10 py-5 rounded-lg">
                     <div className="modalheader w-full flex justify-between items-center mb-10">
                         <h4 className="text-xl text-gray-700 font-bold">Crear personal</h4>
                         <span 
