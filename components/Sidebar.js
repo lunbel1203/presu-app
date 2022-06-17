@@ -14,7 +14,7 @@ export default function Sidebar() {
                 <Link href="/">         
                     <a className="flex justify-between items-center"> 
                         <Image src="/presupuesto.png" width={60} height={60} />
-                        <h1 className="w-full text-2xl font-bold px-5 text-green-600">PresuApp</h1>
+                        <h1 className="w-full text-2xl font-bold px-5 text-blue-600">PresuApp</h1>
                     </a>
                 </Link>
             </div>
@@ -26,8 +26,8 @@ export default function Sidebar() {
                     <FaHome />
                 </ItemMenu>
                 <ItemMenu 
-                    url="/presuepuesto"
-                    name="Presuepuesto"
+                    url="/presupuesto"
+                    name="Presupuesto"
                 >
                     <FaFileInvoiceDollar />
                 </ItemMenu>

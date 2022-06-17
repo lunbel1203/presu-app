@@ -18,7 +18,7 @@ function PersonalPage({personalData}) {
         {
             name: 'Descripción',
             selector: row => row.descripcion,
-            width: '15%'
+            width: '15%',
         },
         {
             name: 'Hora Hombre',
@@ -82,6 +82,14 @@ function PersonalPage({personalData}) {
     ]
 
     const customStyles = {
+        headCells: {
+            style: {
+                backgroundColor: '#235789',
+                color: '#FFFFFF',
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+            },
+        },
         rows: {
             style: {
                 minHeight: '50px', 
@@ -93,14 +101,6 @@ function PersonalPage({personalData}) {
                     backgroundColor: '#f2f2f2',
                 }
             }
-        },
-        headCells: {
-            style: {
-                backgroundColor: '#235789',
-                color: '#FFFFFF',
-                fontWeight: 'bold',
-                textTransform: 'uppercase',
-            },
         },
         cells: {
             style: {
@@ -172,14 +172,14 @@ function PersonalPage({personalData}) {
             <div className={`w-screen h-screen bg-black/50 fixed top-0 left-0 flex justify-center items-center z-50 ${openModalCreate ? '' : 'hidden' }`}>
                 <div className="w-9/12 bg-white px-10 py-5 rounded-lg">
                     <div className="modalheader w-full flex justify-between items-center mb-10">
-                        <h4 className="text-xl text-gray-700 font-bold">Crear personal</h4>
+                        <h4 className="text-3xl text-blue-600 font-bold">Crear personal</h4>
                         <span 
                             className="w-5 h-5 flex justify-center items-center bg-[#a4a4a4] text-white p-3 cursor-pointer rounded-full" 
                             onClick={() => setOpenModalCreate(false)}
                         >X</span>
                     </div>
                     <div className="modalBody">
-                        <PersonalForm />
+                        <PersonalForm closeModal={() => setCloseModalCreate(false)} />
                     </div>
                 </div>
             </div>
@@ -187,9 +187,9 @@ function PersonalPage({personalData}) {
             <div className={`w-screen h-screen bg-black/50 fixed top-0 left-0 flex justify-center items-center z-50 ${openModalEdit ? '' : 'hidden' }`}>
                 <div className="w-9/12 bg-white p-5 rounded-lg">
                     <div className="modalheader w-full flex justify-between items-center mb-10">
-                        <h4 className="text-xl text-gray-700 font-bold">Editar personal</h4>
+                        <h4 className="text-3xl text-blue-600 font-bold">Editar personal</h4>
                         <span 
-                            className="w-5 h-5 flex justify-center items-center bg-[#a4a4a4] text-white p-3 cursor-pointer rounded-full" 
+                            className="w-5 h-5 flex justify-center items-center bg-gray-400 text-white p-3 cursor-pointer rounded-full" 
                             onClick={() => setOpenModalCreate(false)}
                         >X</span>
                     </div>

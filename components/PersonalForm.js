@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from "axios";
-import swal from 'sweetalert';
 
-export function PersonalForm() {
-    const router = useRouter();
+import useAlert from '../hooks/useAlert'
+
+export function PersonalForm(props) {
 
     const [personal, setPersonal] = useState({
         descripcion: '',
@@ -61,18 +61,9 @@ export function PersonalForm() {
             const res = await axios.post('/api/personal', personal);
             
         } else {
-            alertEmptyField("Campo Descripción vacío", "Favor de llenar por lo menos el campo descripción", "warning", "Aceptar");
+            useAlert("Campo Descripción vacío", "Favor de llenar por lo menos el campo descripción", "warning", "Aceptar");
         }
     
-    }
-    
-    const alertEmptyField = (title, text, icon, textButton) => {
-        swal({
-            title: title,
-            text: text,
-            icon: icon,
-            button: textButton
-        });
     }
 
     return(
@@ -263,8 +254,8 @@ export function PersonalForm() {
             </div>
 
             <div className="w-full flex justify-between items-center mt-5">
-                <a className="py-2 px-6 bg-white border border-gray-500 text-lg text-gray-700 rounded-lg cursor-pointer">Cancelar</a>
-                <button className="py-2 px-6 bg-green-500 text-lg text-white rounded-lg cursor-pointer">Guardar personal</button>
+                <a className="py-2 px-6 bg-white border border-gray-500 text-lg text-gray-700 rounded-lg cursor-pointer" onClick={props.closeModal}>Cancelar</a>
+                <button className="py-2 px-6 bg-green-600 text-lg text-white rounded-lg cursor-pointer">Guardar</button>
             </div>
         </form>
     )
